@@ -8,8 +8,8 @@
 
 ## Second
 
-![Second Image](stitch_daily_vouchers_entry_variant_2 (1)/screen.png)
+![Second Image](stitch_daily_vouchers_entry_variant_2%20%281%29/screen.png)
 
 ## Third
 
-![Third Image](stitch_daily_vouchers_entry_variant_2 (2)/screen.png)
+![Third Image](stitch_daily_vouchers_entry_variant_2%20%282%29/screen.png)
