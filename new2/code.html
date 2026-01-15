@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إدخال سند قيد احترافي - حالة فارغة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;500;600;700;800&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5B21B6",
+                        "accent-blue": "#E0F2FE",
+                        "soft-blue": "#F8FAFC",
+                        "background": "#F1F5F9",
+                        "surface": "#FFFFFF",
+                        "border-formal": "#E2E8F0"
+                    },
+                    fontFamily: {
+                        "display": ["Noto Kufi Arabic", "Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-background text-[#1e293b] font-display antialiased;
+            }
+        }
+        .action-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .input-formal {
+            @apply border border-slate-200 bg-white px-3 py-2 rounded shadow-sm text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none text-right placeholder:text-slate-400;
+        }
+        .table-formal th {
+            @apply border-l border-slate-200 last:border-l-0;
+        }
+        .table-formal td {
+            @apply border-l border-slate-200 last:border-l-0;
+        }
+        .font-mono-numbers {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<header class="bg-white border-b border-slate-200 pt-6 pb-4 px-10 w-full">
+<div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">
+<span>المالية</span>
+<span class="material-symbols-outlined !text-[12px] rotate-180">chevron_right</span>
+<span>الأستاذ العام</span>
+<span class="material-symbols-outlined !text-[12px] rotate-180">chevron_right</span>
+<span class="text-primary">إدخال السندات</span>
+</div>
+<div class="flex justify-between items-center">
+<h1 class="text-2xl font-bold text-slate-900 tracking-tight">قيد يومي جديد</h1>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-md">
+<span class="text-[10px] font-bold text-slate-500 uppercase">الفترة الحالية</span>
+<span class="text-xs font-bold text-slate-900">مايو 2024</span>
+</div>
+<div class="flex items-center gap-3 border-r border-slate-200 pr-6">
+<div class="text-left">
+<p class="text-xs font-bold text-slate-900">أليكس مورجان</p>
+<p class="text-[10px] text-slate-500 font-medium">كبير المحاسبين</p>
+</div>
+<div class="size-9 rounded bg-cover bg-center border border-slate-200" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCTU5Lic4rkQztD3C4plXQy31ZVMbQ8H3wnGi4mFG4UJo_-0wZ75drByQ-HYqtnz6JYYxJjviwh8RogkRRjYNhmlAJcq6KR451RaTDXIvJ4jxbvRtCn504Wbs_9J1SD2Ph9I_GYgEJHwjeG-O_vTM0uF-ssSjY1PYsTnR0AV3JBnqEZWepM-oxoa9xpV-hlMuoIt9qvV9yqx1AJ9msb3hZsTIMjGBPP5GoOmzM7hrpAL34k-X4KtIXWuTChRg2VjAbcmOZoxMjzv2KI');"></div>
+</div>
+</div>
+</div>
+</header>
+<section class="p-10 w-full">
+<div class="bg-white border border-slate-200 rounded-lg p-5 flex flex-wrap lg:flex-nowrap items-end gap-5 shadow-sm mb-6">
+<div class="flex flex-col flex-1 min-w-[140px]">
+<label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5 mr-0.5">تاريخ القيد</label>
+<input class="input-formal" type="date" value=""/>
+</div>
+<div class="flex flex-col flex-1 min-w-[140px]">
+<label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5 mr-0.5">رقم المرجع</label>
+<input class="input-formal" placeholder="أدخل رقم المرجع..." type="text"/>
+</div>
+<div class="flex flex-col flex-1 min-w-[140px]">
+<label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5 mr-0.5">رقم السند</label>
+<input class="input-formal font-mono text-slate-400 font-bold bg-slate-50 text-left" dir="ltr" placeholder="تلقائي..." readonly="" type="text" value=""/>
+</div>
+<div class="flex flex-col flex-1 min-w-[140px]">
+<label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5 mr-0.5">نوع السند</label>
+<select class="input-formal">
+<option disabled="" selected="" value="">اختر النوع...</option>
+<option>سند قيد</option>
+<option>سند صرف</option>
+<option>سند قبض</option>
+</select>
+</div>
+<div class="flex flex-col flex-[2] min-w-[280px]">
+<label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5 mr-0.5">البيان / الملاحظات</label>
+<input class="input-formal" placeholder="أدخل وصف المعاملة أو البيان..." type="text"/>
+</div>
+</div>
+<div class="flex items-center justify-between py-4 px-8 bg-slate-800 text-white rounded-t-lg border-x border-t border-slate-800">
+<div class="flex items-center gap-16">
+<div class="flex flex-col">
+<span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-0.5">إجمالي المدين</span>
+<span class="text-2xl font-bold tracking-tight text-white/40 font-mono-numbers">0.00</span>
+</div>
+<div class="flex flex-col border-r border-slate-700 pr-16">
+<span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-0.5">إجمالي الدائن</span>
+<span class="text-2xl font-bold tracking-tight text-white/40 font-mono-numbers">0.00</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white/5 px-5 py-2.5 rounded-lg border border-white/10">
+<div class="flex flex-col items-start">
+<span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">حالة التوازن</span>
+<span class="text-xs font-bold text-slate-300 uppercase tracking-wide">النظام متوازن</span>
+</div>
+<div class="relative size-3">
+<div class="absolute inset-0 bg-slate-400 rounded-full opacity-25"></div>
+<div class="relative size-3 bg-slate-500 rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="bg-white border-x border-b border-slate-200 rounded-b-lg overflow-hidden shadow-sm mb-24">
+<table class="w-full border-collapse table-formal">
+<thead>
+<tr class="bg-slate-100/80 text-right border-b border-slate-200">
+<th class="pr-8 pl-4 py-4 text-[11px] font-bold uppercase tracking-widest text-slate-600">معلومات الحساب</th>
+<th class="px-6 py-4 text-[11px] font-bold uppercase tracking-widest text-slate-600 text-left w-52">المبلغ المدين</th>
+<th class="px-6 py-4 text-[11px] font-bold uppercase tracking-widest text-slate-600 text-left w-52">المبلغ الدائن</th>
+<th class="px-6 py-4 text-[11px] font-bold uppercase tracking-widest text-slate-600 w-44 text-center">مركز التكلفة / المصدر</th>
+<th class="px-8 py-4 w-24"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200">
+<tr class="group hover:bg-slate-50/50 transition-colors">
+<td class="pr-8 pl-4 py-5">
+<div class="flex items-center gap-4">
+<div class="size-9 rounded border border-dashed border-slate-300 bg-slate-50 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined !text-lg">search</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-slate-300 leading-tight">اختر الحساب...</p>
+<p class="text-[11px] font-mono font-medium text-slate-300 mt-0.5" dir="ltr">GL-XXXX-XXXX</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-left">
+<input class="w-full bg-transparent text-left text-sm font-medium text-slate-300 border-none p-0 focus:ring-0 font-mono-numbers" placeholder="0.00" type="text"/>
+</td>
+<td class="px-6 py-5 text-left">
+<input class="w-full bg-transparent text-left text-sm font-medium text-slate-300 border-none p-0 focus:ring-0 font-mono-numbers" placeholder="0.00" type="text"/>
+</td>
+<td class="px-6 py-5 text-center">
+<button class="inline-block px-3 py-1 bg-slate-50 border border-dashed border-slate-200 text-slate-400 text-[10px] font-bold uppercase rounded hover:bg-slate-100 transition-colors">إضافة مركز</button>
+</td>
+<td class="px-8 py-5 text-left">
+<div class="flex gap-1 justify-start">
+<button class="size-8 rounded hover:bg-white border border-transparent hover:border-slate-200 text-slate-400 hover:text-primary transition-all">
+<span class="material-symbols-outlined !text-lg">add</span>
+</button>
+<button class="size-8 rounded hover:bg-red-50 border border-transparent hover:border-red-100 text-slate-400 hover:text-red-600 transition-all opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined !text-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="py-6 px-8 bg-slate-50/50" colspan="5">
+<button class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-primary hover:text-primary/80 transition-all group">
+<span class="material-symbols-outlined !text-base group-hover:scale-110 transition-transform">add_circle</span>
+                        إضافة سطر قيد جديد
+                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<footer class="fixed bottom-0 left-0 right-0 z-50 px-10 py-5 border-t border-slate-200 action-blur">
+<div class="mx-auto flex items-center justify-between">
+<div class="flex items-center gap-10">
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1.5">الحالة الحالية</span>
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-slate-300"></span>
+<span class="text-xs font-bold text-slate-400">قيد جديد</span>
+</div>
+</div>
+<div class="h-8 w-[1px] bg-slate-200"></div>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1.5">المعرف الداخلي</span>
+<span class="text-xs font-mono font-bold text-slate-300" dir="ltr">#TRX-PENDING</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-12 py-2.5 text-sm font-bold text-white bg-primary/40 cursor-not-allowed rounded shadow-lg shadow-primary/5 transition-all order-1" disabled="">
+                ترحيل القيد
+            </button>
+<button class="px-8 py-2.5 text-sm font-bold text-slate-600 bg-white border border-slate-300 rounded hover:bg-slate-50 hover:border-slate-400 transition-all active:bg-slate-100 order-2">
+                إلغاء
+            </button>
+</div>
+</div>
+</footer>
+
+</body></html>
