@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily Vouchers Entry - Variant 2</title>
+<!-- Tailwind CSS with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Noto+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c30e8",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191121",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-size: 20px; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#141118] dark:text-white min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-[#1f1629] border-b border-[#e0dce5] dark:border-[#2d213a] px-6 lg:px-10 py-3 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<h1 class="text-lg font-bold tracking-tight">ERP Finance</h1>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-bold text-primary border-b-2 border-primary pb-0.5" href="#">Vouchers</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Ledger</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#756388]">search</span>
+<input class="pl-10 pr-4 py-2 bg-background-light dark:bg-[#2d213a] border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-primary/50" placeholder="Search records..." type="text"/>
+</div>
+<button class="p-2 hover:bg-background-light dark:hover:bg-[#2d213a] rounded-lg transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center overflow-hidden">
+<img alt="Profile" class="h-full w-full object-cover" data-alt="User profile avatar placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCumX3Y-Yi6uO0CznQtr32NhNZcBc4XbHdcWPUsjCNXzxQPNwEJxyNJsTOgbw7nE3VDuPPsMueL_oZOl1jBYap30ATJBR_p4Lg5Gew0emke7jEV9wsUjpR6JaVnNF5orQ_EquqjGQnJeqGwH_x5gf-zpB11b5pU4S8ziHMtUn9JW_440zAPHciXAz2l8mCOWOy25a_O7Cmvv4Cvw0zNuxL4JskmeJfupibLTv6Lr5ABieNbi26-yCD6HiXre6-vvDTLbJQFtVCMGlMD"/>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col p-6 lg:p-10 max-w-[1400px] mx-auto w-full gap-6 pb-24">
+<!-- Page Heading -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+<div>
+<nav class="flex items-center gap-2 text-xs text-[#756388] mb-1">
+<span>Finance</span>
+<span class="material-symbols-outlined !text-xs">chevron_right</span>
+<span>Voucher Entry</span>
+</nav>
+<h2 class="text-3xl font-black tracking-tight">Daily Vouchers Entry</h2>
+<p class="text-[#756388] dark:text-[#a394b3] text-sm mt-1">Record and manage daily transaction entries with precision</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#1f1629] border border-[#e0dce5] dark:border-[#2d213a] rounded-lg text-sm font-bold hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined">history</span>
+                    View History
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/90 shadow-sm transition-colors">
+<span class="material-symbols-outlined">add</span>
+                    New Batch
+                </button>
+</div>
+</div>
+<!-- Header Inputs Section -->
+<div class="bg-white dark:bg-[#1f1629] p-6 rounded-xl border border-[#e0dce5] dark:border-[#2d213a] shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-wider text-[#756388]">Date</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#756388]">calendar_today</span>
+<input class="w-full bg-background-light dark:bg-[#2d213a] border-none rounded-lg py-2.5 px-3 text-sm focus:ring-2 focus:ring-primary/50" type="text" value="10/24/2023"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-wider text-[#756388]">Ref No</label>
+<input class="w-full bg-background-light dark:bg-[#2d213a] border-none rounded-lg py-2.5 px-3 text-sm focus:ring-2 focus:ring-primary/50" placeholder="REF-2023-001" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-wider text-[#756388]">Voucher No</label>
+<input class="w-full bg-[#f2f0f4] dark:bg-[#191121] border border-dashed border-[#e0dce5] dark:border-[#2d213a] rounded-lg py-2.5 px-3 text-sm text-[#756388]" readonly="" type="text" value="V-10293"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-wider text-[#756388]">Voucher Type</label>
+<select class="w-full bg-background-light dark:bg-[#2d213a] border-none rounded-lg py-2.5 px-3 text-sm focus:ring-2 focus:ring-primary/50">
+<option>Journal Voucher</option>
+<option>Payment Voucher</option>
+<option>Receipt Voucher</option>
+<option>Contra Voucher</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-wider text-[#756388]">Main Details</label>
+<input class="w-full bg-background-light dark:bg-[#2d213a] border-none rounded-lg py-2.5 px-3 text-sm focus:ring-2 focus:ring-primary/50" placeholder="General transaction details..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Main Table Section -->
+<div class="bg-white dark:bg-[#1f1629] rounded-xl border border-[#e0dce5] dark:border-[#2d213a] shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary/5 dark:bg-primary/10 border-b border-[#e0dce5] dark:border-[#2d213a]">
+<th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-[#756388] w-12 text-center">S.No</th>
+<th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-[#756388] min-w-[240px]">Account Name</th>
+<th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-[#756388] min-w-[180px]">Source / Cost Center</th>
+<th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-[#756388] min-w-[280px]">Description</th>
+<th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-[#756388] w-40 text-right">Debit ($)</th>
+<th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-[#756388] w-40 text-right">Credit ($)</th>
+<th class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-[#756388] w-16 text-center"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#f2f0f4] dark:divide-[#2d213a]">
+<!-- Row 1 -->
+<tr class="hover:bg-primary/5 dark:hover:bg-primary/5 transition-colors group">
+<td class="px-4 py-3 text-sm text-[#756388] text-center font-medium">01</td>
+<td class="px-4 py-3">
+<div class="relative group/input">
+<input class="w-full bg-transparent border-none rounded py-1 px-2 text-sm focus:ring-1 focus:ring-primary/30" placeholder="Search Account..." type="text"/>
+<button class="absolute right-1 top-1/2 -translate-y-1/2 p-1 text-[#756388] hover:text-primary opacity-0 group-hover/input:opacity-100 transition-opacity">
+<span class="material-symbols-outlined !text-lg">search</span>
+</button>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="relative group/input">
+<input class="w-full bg-transparent border-none rounded py-1 px-2 text-sm focus:ring-1 focus:ring-primary/30" placeholder="Select Source..." type="text"/>
+<button class="absolute right-1 top-1/2 -translate-y-1/2 p-1 text-[#756388] hover:text-primary opacity-0 group-hover/input:opacity-100 transition-opacity">
+<span class="material-symbols-outlined !text-lg">list</span>
+</button>
+</div>
+</td>
+<td class="px-4 py-3">
+<input class="w-full bg-transparent border-none rounded py-1 px-2 text-sm focus:ring-1 focus:ring-primary/30" placeholder="Line item details..." type="text"/>
+</td>
+<td class="px-4 py-3">
+<input class="w-full bg-transparent border-none rounded py-1 px-2 text-sm text-right font-semibold focus:ring-1 focus:ring-primary/30" placeholder="0.00" type="number"/>
+</td>
+<td class="px-4 py-3">
+<input class="w-full bg-transparent border-none rounded py-1 px-2 text-sm text-right font-semibold focus:ring-1 focus:ring-primary/30" placeholder="0.00" type="number"/>
+</td>
+<td class="px-4 py-3 text-center">
+<button class="p-1.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-950/20 rounded transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</td>
+</tr>
+<!-- Empty Rows Placeholder Style -->
+<tr class="bg-gray-50/50 dark:bg-[#191121]/50 border-dashed border-b border-[#e0dce5] dark:border-[#2d213a]">
+<td class="py-10 text-center" colspan="7">
+<button class="inline-flex items-center gap-2 px-4 py-2 text-primary hover:bg-primary/10 rounded-lg text-sm font-bold transition-all border border-primary/20">
+<span class="material-symbols-outlined">add_circle</span>
+                                    Add New Transaction Row
+                                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Summary Section -->
+<div class="bg-primary/5 dark:bg-[#191121] border-t border-[#e0dce5] dark:border-[#2d213a] p-6">
+<div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-6 divide-x divide-[#e0dce5] dark:divide-[#2d213a]">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-[#756388] uppercase tracking-wider">Total Debit</span>
+<span class="text-xl font-black text-primary">$ 0.00</span>
+</div>
+<div class="flex flex-col gap-1 pl-6">
+<span class="text-xs font-bold text-[#756388] uppercase tracking-wider">Total Credit</span>
+<span class="text-xl font-black text-primary">$ 0.00</span>
+</div>
+<div class="flex flex-col gap-1 pl-6">
+<span class="text-xs font-bold text-[#756388] uppercase tracking-wider">Difference</span>
+<span class="text-xl font-black text-red-500">$ 0.00</span>
+</div>
+</div>
+<div class="flex items-center gap-4 px-6 py-3 bg-white dark:bg-[#2d213a] rounded-xl border border-[#e0dce5] dark:border-[#2d213a] shadow-sm">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600">
+<span class="material-symbols-outlined !text-base">error</span>
+</div>
+<span class="text-sm font-bold text-red-600">Unbalanced</span>
+</div>
+<div class="w-px h-6 bg-[#e0dce5] dark:bg-[#3d2f4d]"></div>
+<p class="text-xs text-[#756388] max-w-[200px] leading-tight">Debit and credit totals must be equal to save the voucher.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Bar -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white dark:bg-[#1f1629] border-t border-[#e0dce5] dark:border-[#2d213a] px-6 lg:px-10 py-4 flex items-center justify-between z-40 shadow-[0_-4px_10px_rgba(0,0,0,0.03)]">
+<div class="flex items-center gap-4 text-[#756388]">
+<div class="hidden sm:flex items-center gap-2 text-xs">
+<span class="material-symbols-outlined !text-sm">keyboard</span>
+<span>Press <kbd class="px-1.5 py-0.5 bg-gray-100 dark:bg-[#2d213a] border border-[#e0dce5] dark:border-[#2d213a] rounded">Alt + S</kbd> to save</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2.5 text-sm font-bold text-[#756388] hover:bg-background-light dark:hover:bg-[#2d213a] rounded-lg transition-colors">
+                Cancel
+            </button>
+<button class="flex items-center gap-2 px-4 py-2.5 text-sm font-bold border border-[#e0dce5] dark:border-[#2d213a] hover:bg-gray-50 dark:hover:bg-[#2d213a] rounded-lg transition-colors">
+<span class="material-symbols-outlined">print</span>
+                Print Preview
+            </button>
+<button class="flex items-center gap-2 px-8 py-2.5 bg-primary text-white text-sm font-bold rounded-lg shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
+<span class="material-symbols-outlined">save</span>
+                Save Voucher
+            </button>
+</div>
+</footer>
+</body></html>
